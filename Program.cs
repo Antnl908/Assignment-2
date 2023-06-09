@@ -1,13 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
+using Assignment_2;
 using System;
 using System.Threading.Tasks;
 class Assignment2
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello world!");
-        Test.TestVoid();
+        BankAccount bankAccount;
+        List<Client> clients = new List<Client>();
     }
 }
 
