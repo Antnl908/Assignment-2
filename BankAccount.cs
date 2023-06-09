@@ -6,6 +6,7 @@ namespace Assignment_2
 {
     internal class BankAccount
     {
+        private object lockObj = new object();
         public double balance;
         private Security security;
 
@@ -20,11 +21,14 @@ namespace Assignment_2
 
         public void Transaction(double amount, int clientId)
         {
-            security.MakePreTransactionStamp(clientId, balance);
-            balance += amount;
-            numberOfTransations++;
-            security.MakePostTransactionStamp(clientId, balance);
-            security.VerifyLastTransaction(amount);
+            lock (lockObj)
+            {
+                security.MakePreTransactionStamp(clientId, balance);
+                balance += amount;
+                numberOfTransations++;
+                security.MakePostTransactionStamp(clientId, balance);
+                security.VerifyLastTransaction(amount);
+            }
         }
 
         public Security Security

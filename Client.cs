@@ -45,7 +45,7 @@ namespace Assignment_2
                     bankAccount.Transaction(-randomAmount, id);
                     totalAmountTransactioned -= randomAmount;
                 }
-                Thread.Sleep(100);
+                //Thread.Sleep(100);
             }
         }
     }
