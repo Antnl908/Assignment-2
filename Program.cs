@@ -7,8 +7,17 @@ class Assignment2
 {
     static void Main(string[] args)
     {
-        BankAccount bankAccount;
+        int id = 10;
+        BankAccount bankAccount = new BankAccount(0);
         List<Client> clients = new List<Client>();
+
+        for(int i = 0; i < id; i++)
+        {
+            var c = new Client(id, bankAccount);
+            clients.Add(c);
+            Thread t = new Thread(new ThreadStart(c.Run));
+        }
+
     }
 }
 
