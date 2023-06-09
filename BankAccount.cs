@@ -21,6 +21,7 @@ namespace Assignment_2
 
         public void Transaction(double amount, int clientId)
         {
+
             lock (lockObj)
             {
                 security.MakePreTransactionStamp(clientId, balance);
