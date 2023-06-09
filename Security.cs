@@ -25,6 +25,15 @@ namespace Assignment_2
             History.Add(new Stamp(id, amount));
         }
 
+        public void VerifyLastTransaction(double amount)
+        {
+            double sum =0 ;
+            for(int i = 0; i < History.Count; i++)
+            {
+
+            }
+        }
+
         public List<Stamp> History
         {
             get { return transactionHistory; }
