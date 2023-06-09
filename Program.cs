@@ -14,11 +14,10 @@ class Assignment2
         int id = 5;
         //int timer = 0;
         bool time = true;
-        bool test = false;
         BankAccount bankAccount = new BankAccount(0);
         List<Client> clients = new List<Client>();
 
-        for(int i = 0; i < id; i++)
+        for (int i = 0; i < id; i++)
         {
             var c = new Client(id, bankAccount);
             clients.Add(c);
@@ -32,7 +31,7 @@ class Assignment2
             Console.WriteLine();
             for (int i = 0; i < clients.Count; i++)
             {
-                clients[i].IsRunning = false;
+               // clients[i].IsRunning = false;
             }
 
             Console.WriteLine("Number of transactions: " + bankAccount.numberOfTransations);
@@ -40,34 +39,12 @@ class Assignment2
         };
         timer.Start();
 
-        /*
-        while (time)
+        var timer2 = new Timer(2000);
+        timer2.Elapsed += (sender, eventArgs) =>
         {
-            timer++;
-            if(timer > 10000) 
-            {
-                time = false;
-                test = true;
-                break; 
-            }
-        }
-        */
+            Console.WriteLine("Test");
 
-    }
-
-    public static void OnEventExecution(Object? sender, ElapsedEventArgs eventArgs)
-    {
-        
+        };
+        timer2.Start();
     }
 }
-
-class Test
-{
-    public static void TestVoid()
-    {
-        Console.WriteLine("Doing tests!");
-
-        Console.WriteLine("Doing another test!");
-    }
-}
-
