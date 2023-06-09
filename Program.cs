@@ -16,6 +16,8 @@ class Test
     public static void TestVoid()
     {
         Console.WriteLine("Doing tests!");
+
+        Console.WriteLine("Doing another test!");
     }
 }
 

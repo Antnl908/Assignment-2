@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Anton\\.nuget\\packages\\": {}
+    "C:\\Users\\Waber\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio Projects\\Assignment 2\\Assignment 2\\Assignment 2.csproj",
+      "projectUniqueName": "C:\\Users\\Waber\\Documents\\GitHub\\Assignment-2\\Assignment 2.csproj",
       "projectName": "Assignment 2",
-      "projectPath": "D:\\Visual Studio Projects\\Assignment 2\\Assignment 2\\Assignment 2.csproj",
-      "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio Projects\\Assignment 2\\Assignment 2\\obj\\",
+      "projectPath": "C:\\Users\\Waber\\Documents\\GitHub\\Assignment-2\\Assignment 2.csproj",
+      "packagesPath": "C:\\Users\\Waber\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Waber\\Documents\\GitHub\\Assignment-2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Waber\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
