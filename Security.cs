@@ -36,18 +36,18 @@ namespace Assignment_2
 
             //    }
             //}
-            var a = Math.Round(amount, 4);
+            var a = Math.Round(amount, 3);
 
 
-            //double sum = History[History.Count - 1].Balance - History[History.Count - 2].Balance;
-            double sum = History[1].Balance - History[0].Balance;
+            double sum = History[History.Count - 1].Balance - History[History.Count - 2].Balance;
+           // double sum = History[1].Balance - History[0].Balance;
 
-            var s = Math.Round(sum, 4);
+            var s = Math.Round(sum, 3);
 
-            if(s != a) { numberOfErrors++; }
+            if(s != a) { numberOfErrors++; Console.WriteLine($"Error amount: {a} Error sum: {s}"); }
 
             //Console.WriteLine($"Final amount: {amount} Expected amount {sum} Number of errors: {numberOfErrors}");
-            History.Clear();
+            //History.Clear();
         }
 
         public List<Stamp> History
