@@ -18,6 +18,8 @@ class Assignment2
             Thread t = new Thread(new ThreadStart(c.Run));
         }
 
+        Console.WriteLine($"Numer of errors{bankAccount.Security.NumberOfErrors}");
+
     }
 }
 

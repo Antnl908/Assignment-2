@@ -40,13 +40,20 @@ namespace Assignment_2
 
             sum = History[History.Count - 1].Balance - History[History.Count - 2].Balance;
 
-            Console.WriteLine($"Final amount: {amount} Expected amount {sum} Number of errors: {numberOfErrors}");
+            if(sum != amount) { numberOfErrors++; }
+
+            //Console.WriteLine($"Final amount: {amount} Expected amount {sum} Number of errors: {numberOfErrors}");
         }
 
         public List<Stamp> History
         {
             get { return transactionHistory; }
             set { transactionHistory = value; }
+        }
+
+        public int NumberOfErrors
+        {
+            get { return numberOfErrors; }
         }
     }
 }

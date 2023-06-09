@@ -26,5 +26,10 @@ namespace Assignment_2
             security.MakePostTransactionStamp(clientId, balance);
             security.VerifyLastTransaction(amount);
         }
+
+        public Security Security
+        {
+            get { return security; }
+        }
     }
 }
