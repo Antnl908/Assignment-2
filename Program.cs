@@ -8,6 +8,8 @@ class Assignment2
     static void Main(string[] args)
     {
         int id = 10;
+        int timer = 0;
+        bool time = true;
         BankAccount bankAccount = new BankAccount(0);
         List<Client> clients = new List<Client>();
 
@@ -16,6 +18,17 @@ class Assignment2
             var c = new Client(id, bankAccount);
             clients.Add(c);
             Thread t = new Thread(new ThreadStart(c.Run));
+        }
+
+        while(time)
+        {
+            timer++;
+            if(timer > 40) { time = false; break; }
+        }
+
+        for(int i = 0; i < clients.Count; i++)
+        {
+            clients[i].IsRunning = false;
         }
 
         Console.WriteLine($"Numer of errors{bankAccount.Security.NumberOfErrors}");
