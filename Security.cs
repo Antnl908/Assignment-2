@@ -38,7 +38,7 @@ namespace Assignment_2
             //}
 
 
-            //sum = History[History.Count - 1].Balance - History[History.Count - 2].Balance;
+            sum = History[History.Count - 1].Balance - History[History.Count - 2].Balance;
 
             if(sum != amount) { numberOfErrors++; }
 
