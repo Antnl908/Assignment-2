@@ -6,7 +6,29 @@ using System.Threading.Tasks;
 
 namespace Assignment_2
 {
-    internal class Security
+    public class Security
     {
+        List<Stamp> transactionHistory = new List<Stamp>();
+        int numberOfErrors;
+
+        public Security()
+        {
+
+        }
+
+        public void MakePreTransactionStamp(int id, double amount)
+        {
+            History.Add(new Stamp(id, amount));
+        }
+        public void MakePostTransactionStamp(int id, double amount)
+        {
+            History.Add(new Stamp(id, amount));
+        }
+
+        public List<Stamp> History
+        {
+            get { return transactionHistory; }
+            set { transactionHistory = value; }
+        }
     }
 }
