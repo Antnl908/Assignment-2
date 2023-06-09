@@ -28,10 +28,12 @@ namespace Assignment_2
         public void VerifyLastTransaction(double amount)
         {
             double sum =0 ;
-            for(int i = 0; i < History.Count; i++)
+            for(int i = 0; i < History.Count; i+=2)
             {
-
+                sum += History[i + 1].Balance - History[i].Balance;
             }
+
+            Console.WriteLine($"Final amount: {amount} Expected amount {sum} Numer of errors: {numberOfErrors}");
         }
 
         public List<Stamp> History
