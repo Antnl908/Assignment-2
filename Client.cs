@@ -37,12 +37,12 @@ namespace Assignment_2
                 double randomAmount = random.NextDouble() * 100;
                 if (depositing)
                 {
-                    //bankAccount.Transaction(id, randomAmount);
+                    bankAccount.Transaction(randomAmount, id);
                     totalAmountTransactioned += randomAmount;
                 }
                 else
                 {
-                    //bankAccount.Transaction(id, -randomAmount);
+                    bankAccount.Transaction(-randomAmount, id);
                     totalAmountTransactioned -= randomAmount;
                 }
             }

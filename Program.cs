@@ -3,13 +3,18 @@
 using Assignment_2;
 using System;
 using System.Threading.Tasks;
+using System.Timers;
+using System.Transactions;
+using Timer = System.Timers.Timer;
+
 class Assignment2
 {
     static void Main(string[] args)
     {
-        int id = 10;
-        int timer = 0;
+        int id = 5;
+        //int timer = 0;
         bool time = true;
+        bool test = false;
         BankAccount bankAccount = new BankAccount(0);
         List<Client> clients = new List<Client>();
 
@@ -18,21 +23,41 @@ class Assignment2
             var c = new Client(id, bankAccount);
             clients.Add(c);
             Thread t = new Thread(new ThreadStart(c.Run));
+            t.Start();
         }
 
-        while(time)
+        var timer = new Timer(1000);
+        timer.Elapsed += (sender, eventArgs) =>
+        {
+            Console.WriteLine();
+            for (int i = 0; i < clients.Count; i++)
+            {
+                clients[i].IsRunning = false;
+            }
+
+            Console.WriteLine("Number of transactions: " + bankAccount.numberOfTransations);
+            Console.WriteLine($"Number of errors: {bankAccount.Security.NumberOfErrors}");
+        };
+        timer.Start();
+
+        /*
+        while (time)
         {
             timer++;
-            if(timer > 40) { time = false; break; }
+            if(timer > 10000) 
+            {
+                time = false;
+                test = true;
+                break; 
+            }
         }
+        */
 
-        for(int i = 0; i < clients.Count; i++)
-        {
-            clients[i].IsRunning = false;
-        }
+    }
 
-        Console.WriteLine($"Numer of errors{bankAccount.Security.NumberOfErrors}");
-
+    public static void OnEventExecution(Object? sender, ElapsedEventArgs eventArgs)
+    {
+        
     }
 }
 
