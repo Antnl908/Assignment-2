@@ -18,14 +18,13 @@ namespace Assignment_2
         private Random random;
 
         public bool IsRunning { get => isRunning; set => isRunning = value; }
-        public int Id { get => id; }
 
-        public Client(BankAccount bankAccount)
+        public Client(int id, BankAccount bankAccount)
         {
+            this.id = id;
             this.bankAccount = bankAccount;
 
             random = new Random();
-
             depositing = random.Next(2) == 1;
         }
 
@@ -38,16 +37,15 @@ namespace Assignment_2
                 double randomAmount = random.NextDouble() * 100;
                 if (depositing)
                 {
-                    //bankAccount.Deposit(-randomAmount);
+                    //bankAccount.Transaction(id, randomAmount);
                     totalAmountTransactioned += randomAmount;
                 }
                 else
                 {
-                    //bankAccount.Deposit(randomAmount);
+                    //bankAccount.Transaction(id, -randomAmount);
                     totalAmountTransactioned -= randomAmount;
                 }
             }
         }
     }
 }
-
