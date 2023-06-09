@@ -6,7 +6,7 @@ namespace Assignment_2
 {
     internal class BankAccount
     {
-        private double balance;
+        public double balance;
         private Security security;
 
         public int numberOfTransations;

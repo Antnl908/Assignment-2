@@ -13,9 +13,10 @@ class Assignment2
     {
         int id = 5;
         //int timer = 0;
-        bool time = true;
         BankAccount bankAccount = new BankAccount(0);
         List<Client> clients = new List<Client>();
+
+        double amountTotal = 0;
 
         for (int i = 0; i < id; i++)
         {
@@ -28,23 +29,22 @@ class Assignment2
         var timer = new Timer(1000);
         timer.Elapsed += (sender, eventArgs) =>
         {
+            Console.WriteLine("Number of transactions: " + bankAccount.numberOfTransations);
+            Console.WriteLine("Number of errors: " + bankAccount.Security.NumberOfErrors);
+
+            foreach (Client client in clients)
+                amountTotal += client.totalAmountTransactioned;
+
+            Console.WriteLine("All transactions of clients sums into: " + amountTotal + ", balance on account: " + bankAccount.balance);
+
             Console.WriteLine();
             for (int i = 0; i < clients.Count; i++)
             {
-               // clients[i].IsRunning = false;
+                clients[i].IsRunning = false;
             }
-
-            Console.WriteLine("Number of transactions: " + bankAccount.numberOfTransations);
-            Console.WriteLine($"Number of errors: {bankAccount.Security.NumberOfErrors}");
         };
         timer.Start();
 
-        var timer2 = new Timer(2000);
-        timer2.Elapsed += (sender, eventArgs) =>
-        {
-            Console.WriteLine("Test");
-
-        };
-        timer2.Start();
+        
     }
 }

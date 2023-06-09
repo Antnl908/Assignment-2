@@ -10,7 +10,7 @@ namespace Assignment_2
     {
         private int id;
         private BankAccount bankAccount;
-        private double totalAmountTransactioned;
+        public double totalAmountTransactioned;
         private bool depositing;
 
         private bool isRunning;
@@ -34,7 +34,7 @@ namespace Assignment_2
 
             while (isRunning)
             {
-                double randomAmount = random.NextDouble() * 100;
+                double randomAmount = random.NextDouble();
                 if (depositing)
                 {
                     bankAccount.Transaction(randomAmount, id);
