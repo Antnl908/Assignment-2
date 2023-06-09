@@ -27,7 +27,7 @@ namespace Assignment_2
 
         public void VerifyLastTransaction(double amount)
         {
-            double sum =0 ;
+            //double sum =0 ;
             //for (int i = 0; i < History.Count; i ++)
             //{
             //    //sum += History[i + 1].Balance - History[i].Balance;
@@ -36,13 +36,18 @@ namespace Assignment_2
 
             //    }
             //}
+            var a = Math.Round(amount, 4);
 
 
-            sum = History[History.Count - 1].Balance - History[History.Count - 2].Balance;
+            //double sum = History[History.Count - 1].Balance - History[History.Count - 2].Balance;
+            double sum = History[1].Balance - History[0].Balance;
 
-            if(sum != amount) { numberOfErrors++; }
+            var s = Math.Round(sum, 4);
+
+            if(s != a) { numberOfErrors++; }
 
             //Console.WriteLine($"Final amount: {amount} Expected amount {sum} Number of errors: {numberOfErrors}");
+            History.Clear();
         }
 
         public List<Stamp> History
